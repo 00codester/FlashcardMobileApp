@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class ViewFlashCard : AppCompatActivity() {
 
+    //determines whether to show the front or back of the flashcard
     var isFrontVisible: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,16 +23,19 @@ class ViewFlashCard : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //Declare variables
         val flashcardList: ArrayList<Flashcard>? = intent.getParcelableArrayListExtra("flashcard_list")
         val flashcard: Flashcard? = intent.getParcelableExtra("flashcard_data")
         val cardFaceDisplay: TextView = findViewById(R.id.txtCard)
-        var flipcard: Button = findViewById(R.id.flipCard)
+        val flipCard: Button = findViewById(R.id.flipCard)
         val homeBtn: Button = findViewById(R.id.btnHome)
 
+        //logic to determine which side of the flashcard to show
         flashcard?.let {
             cardFaceDisplay.text = flashcard.front
 
-            flipcard.setOnClickListener{
+            flipCard.setOnClickListener{
                 if (isFrontVisible) {
                     cardFaceDisplay.text = flashcard.back
                 } else {
@@ -41,6 +45,7 @@ class ViewFlashCard : AppCompatActivity() {
             }
         }
 
+        //returns user to main screen when done looking at flashcard
         homeBtn.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java).apply {
                 putExtra("flashcard_list", flashcardList)

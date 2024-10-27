@@ -25,4 +25,4 @@ This project was made to help me familiarize myself with a new programming langu
 
 * Add collections of Flashcards
 * Store Flashcards in memory to remain persistent after app closes
-* Add way to remove flashcards and collections
+* Add way to edit and remove flashcards and collections

@@ -12,6 +12,7 @@ import kotlin.collections.ArrayList
 
 class CreateFlashCard : AppCompatActivity() {
 
+    //declare variables
     lateinit var btnSave : Button
     lateinit var setCardFront : TextInputEditText
     lateinit var setCardBack : TextInputEditText
@@ -27,6 +28,7 @@ class CreateFlashCard : AppCompatActivity() {
             insets
         }
 
+        //set variables
         btnSave = findViewById(R.id.btnSaveCard)
         setCardFront = findViewById(R.id.inTxtFront)
         setCardBack = findViewById(R.id.inTxtBack)
@@ -34,7 +36,7 @@ class CreateFlashCard : AppCompatActivity() {
         btnSave.setOnClickListener{ onClickSaveCard()}
     }
 
-
+    //What to do when the Save Button is clicked
     fun onClickSaveCard(){
 
         var flashcardList: ArrayList<Flashcard>? = intent.getParcelableArrayListExtra("flashcard_list")

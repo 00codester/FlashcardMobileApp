@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    //puts all the flashcards on the main screen
+    //puts all the created flashcards on the main screen
     fun addFlashcardToView(flashcard: Flashcard){
 
         val cardfront = TextView(this)
